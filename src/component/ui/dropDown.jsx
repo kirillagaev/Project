@@ -1,11 +1,12 @@
 import React from "react";
-import List from "./list";
 
-
-const DropDown = () => {
-    return (<div className="DropDown">
-        <List />
+const DropDown = ({value, country}) => {
+    return (<div className={value ? "DropDown" : "DropDown_off"}>
+        <div className='countryInfo'>
+            {country}
+        </div>
     </div>);
 };
 
 export default DropDown;
+

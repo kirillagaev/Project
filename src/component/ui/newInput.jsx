@@ -1,15 +1,11 @@
-import PropTypes from "prop-types";
 import React from "react";
 
-const NewInput = ({Focus=f=>f, Blur=f=>f}) =>{
+const NewInput = ({focus, blur, change}) =>{
     return (
-        <input type='text' className="NewInput" placeholder="Найти пользователя" defaultValue='' onFocus={()=>Focus(true)} onBlur={()=>Blur(false)}/>
+        <input type='text' className="NewInput" placeholder="Введите код страны" maxLength='3'
+               onFocus={()=>focus()} onBlur={()=>blur()}
+               onChange={(e)=>change(e)}/>
     );
 };
 
-NewInput.propsTypes={
-  Focus: PropTypes.func,
-  Blur: PropTypes.func,
-};
-
-export default NewInput;
+export default NewInput
